@@ -1,2 +1,49 @@
+.CountryTable {
+  background-color: #ff00008c;
+  display: flex;
+  flex-direction: column;
+}
 
+.title {
+  color: black;
+  font-family: Inter;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 24px;
+  align-self: flex-start;
+
+}
+
+.horizontal_container {
+  display: flex;  
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.search {
+  width: 40%;
+  height: 40px;
+  background-color: #fdfdfd;
+  border-radius: 8px;
+  border-width: 2px ;
+  border-style: solid;
+  border-color: #efefef;
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  width: 78px;
+  background-color: #15172a;
+  color: #fafafa;
+  border: none;
+  border-radius: 5px;
+  font-weight: 700;
+}
+
+.button:hover {
+  background-color: #2e2f47;
+}
 
