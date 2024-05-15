@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './styles.css'
-import { Country } from '../../../types/country'
+import { Country } from '../../types/country'
 
 function useSortedCountries(countryData: Country[]) {
   const [sortedData, setSortedData] = useState<Country[]>([]);
@@ -12,7 +12,7 @@ function useSortedCountries(countryData: Country[]) {
   return sortedData;
 }
 
-function Table({ countryData }: { countryData: Country[]}) {
+function Table({ countryData, countryVotes }: { countryData: Country[], countryVotes: {name: string, votes: number}[]}) {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
   const sortedData = useSortedCountries(countryData);
@@ -43,7 +43,7 @@ function Table({ countryData }: { countryData: Country[]}) {
               <td>{item.region}</td>
               <td>{item.sub_region}</td>
               <td>weather</td>
-              <td className='votes-column'>{item.votes}</td>
+              <td className='votes-column'>{countryVotes.find(vote => item.name === vote.name)?.votes}</td>
 
             </tr>
           ))}

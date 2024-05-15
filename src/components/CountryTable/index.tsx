@@ -1,12 +1,22 @@
 import './styles.css'
-import React from 'react'
-import Table from './Table'
+import React, { useState } from 'react'
+import Table from '../Table'
 import { MOCK_COUNTRIES } from '../../mocks'
 import searchIcon from '../../assets/search.svg'
 import { useSearchbar } from '../useSearchbar'
+import VoteModal from '../VoteModal'
+import { Country } from '../../types/country'
 
 const CountryTable: React.FC = () => {
   const { searchQuery, filterData, handleSearchChange } = useSearchbar()
+  const [ isModalOpen, setIsModalOpen ] = useState(false)
+  const [ countryVotes, setVotes ] = useState(MOCK_COUNTRIES.map(({name, votes}: Country) => {
+    return {name, votes}
+  }))
+
+  const openModal = () => setIsModalOpen(true)
+  const closeModal = () => setIsModalOpen(false)
+
 
   return (
     <div className="CountryTable">
@@ -22,9 +32,10 @@ const CountryTable: React.FC = () => {
             onChange={handleSearchChange}
           />
         </div>
-        <button className='button'>Vote</button>
+        <button className='button' onClick={openModal}>Vote</button>
       </div>
-      <Table countryData={filterData(MOCK_COUNTRIES)} />
+      <Table countryData={filterData(MOCK_COUNTRIES)} countryVotes={countryVotes} />
+      <VoteModal isModalOpen={isModalOpen} closeModal={closeModal} setVotes={setVotes} countryVotes={countryVotes}/>
     </div>
   )
 }
