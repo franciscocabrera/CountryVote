@@ -1,5 +1,5 @@
 .CountryTable {
-  background-color: #ff00008c;
+  /* background-color: #ff00008c; */
   display: flex;
   flex-direction: column;
 }
@@ -15,6 +15,7 @@
 }
 
 .horizontal_container {
+  height: 40px;
   display: flex;  
   flex-direction: row;
   justify-content: space-between;
@@ -22,9 +23,21 @@
   padding-bottom: 16px;
 }
 
-.search {
+.searchbar {
+  display: flex;
+  flex-direction: row;
   width: 40%;
-  height: 40px;
+}
+
+.search-icon {
+  width: 24px;
+  height: 24px;
+  align-self: center;
+  position: absolute;
+  margin-left: 24px;
+}
+
+.search-input {
   background-color: #fdfdfd;
   border-radius: 8px;
   border-width: 2px ;
@@ -32,6 +45,18 @@
   border-color: #efefef;
   display: flex;
   align-items: center;
+  font-size: 14px;
+  font-family: Inter;
+  padding-left: 60px;
+  width: 100%;
+}
+
+.search-input::placeholder {
+  color: #8a8c90
+}
+
+.search-input:focus {
+  outline: 0px;
 }
 
 .button {
@@ -41,6 +66,7 @@
   border: none;
   border-radius: 5px;
   font-weight: 700;
+  font-size: 16px;
 }
 
 .button:hover {

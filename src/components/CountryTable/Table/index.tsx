@@ -1,14 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './styles.css'
-
-type Country = {
-  name: string,
-  official_name: string,
-  capital_city: string,
-  region: string,
-  sub_region: string,
-  votes: number
-}
+import { Country } from '../../../types/country'
 
 function useSortedCountries(countryData: Country[]) {
   const [sortedData, setSortedData] = useState<Country[]>([]);
@@ -17,7 +9,6 @@ function useSortedCountries(countryData: Country[]) {
     const sorted = countryData.sort((a, b) => b.votes - a.votes);
     setSortedData(sorted);
   }, [countryData]);
-
   return sortedData;
 }
 
@@ -41,7 +32,7 @@ function Table({ countryData }: { countryData: Country[]}) {
             <th>Region</th>
             <th>Sub Region</th>
             <th>Weather</th>
-            <th>Votes</th>
+            <th className='votes-header'>Votes</th>
           </tr>
         </thead>
         <tbody>
@@ -52,7 +43,7 @@ function Table({ countryData }: { countryData: Country[]}) {
               <td>{item.region}</td>
               <td>{item.sub_region}</td>
               <td>weather</td>
-              <td>{item.votes}</td>
+              <td className='votes-column'>{item.votes}</td>
 
             </tr>
           ))}

@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 import CountryTable from './components/CountryTable';
 
@@ -12,3 +13,4 @@ function App() {
 }
 
 export default App;
+

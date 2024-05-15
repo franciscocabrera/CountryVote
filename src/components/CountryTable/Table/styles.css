@@ -1,4 +1,35 @@
 .table {
   background-color: #ffffff;
   border-radius: 20px;
+  padding: 16px;
+}
+
+th {
+  padding-left: 10px;
+  padding-right: 18px;
+  font-family: Work Sans;
+  font-size: 14px;
+  text-align: left;
+  color: #15172a;
+  width: 160px;
+}
+
+td {
+  padding-left: 10px;
+  padding-right: 18px;
+  font-family: Inter;
+  font-size: 16px;
+  text-align: left;
+  color: #15172a;
+  padding-top: 26px;
+  width: 160px;
+}
+
+th:first-child, td:first-child {
+  padding-left: 0px;
+}
+
+th:last-child, td:last-child {
+  padding-right: 0px;
+  width: 40px
 }
