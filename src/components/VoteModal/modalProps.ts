@@ -3,6 +3,7 @@ export interface Props {
   countryVotes: {name: string, votes: number}[]
   closeModal: () => void
   setVotes: (votes: {name: string, votes: number}[]) => void
+  showAlert: () => void
 }
 
 export const modalStyle = {

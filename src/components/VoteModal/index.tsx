@@ -6,12 +6,12 @@ import { Props, modalStyle } from './modalProps'
 import { useForm } from './hooks/useForm'
 import { MOCK_COUNTRIES } from '../../mocks'
 
-const VoteModal: React.FC<Props> = (
-  {
+const VoteModal: React.FC<Props> = ({
     isModalOpen, 
     closeModal, 
     setVotes, 
-    countryVotes
+    countryVotes,
+    showAlert,
   }) => {
   const { isValidEmail } = useValidateEmail()
   const { 
@@ -19,7 +19,7 @@ const VoteModal: React.FC<Props> = (
     submitDisabled, 
     handleSubmit, 
     handleInputChange 
-  } = useForm(countryVotes, setVotes, isValidEmail, closeModal)
+  } = useForm(countryVotes, setVotes, isValidEmail, closeModal, showAlert)
   const sortedCountries = MOCK_COUNTRIES.sort((a, b) => {
     const nameA = a.name.toLowerCase();
     const nameB = b.name.toLowerCase();

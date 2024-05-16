@@ -1,5 +1,5 @@
 import { ChangeEvent, useState } from 'react'
-import { Country } from '../types/country'
+import { Country } from '../../types/country'
 
 export const useSearchbar = () => {
   const [searchQuery, setSearchQuery] = useState('');

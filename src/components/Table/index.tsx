@@ -80,9 +80,9 @@ export const Table = ({ countryData, countryVotes }: { countryData: Country[], c
       </table>
 
       <div className='navigation-container'>
-        <button className='page-button' onClick={() => setCurrentPage(prev => prev > 1 ? prev - 1 : 1)}>{'<'}</button>
+        <button className='page-button' disabled={currentPage === 1} onClick={() => setCurrentPage(prev => prev > 1 ? prev - 1 : 1)}>{'<'}</button>
         <span className='page-label'>Page {currentPage}</span>
-        <button className='page-button' onClick={() => setCurrentPage(prev => prev < Math.ceil(sortedData.length / itemsPerPage) ? prev + 1 : prev)}>{'>'}</button>
+        <button className='page-button' disabled={currentPage === 3} onClick={() => setCurrentPage(prev => prev < Math.ceil(sortedData.length / itemsPerPage) ? prev + 1 : prev)}>{'>'}</button>
       </div>
     </div>
   );

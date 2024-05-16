@@ -4,7 +4,8 @@ export const useForm = (
   countryVotes: {name: string, votes: number}[], 
   setVotes: (votes: {name: string, votes: number}[]) => void, 
   isValidEmail: (email: string) => boolean,
-  closeModal: () => void
+  closeModal: () => void,
+  showAlert: () => void
 ) => {
   const [formData, setFormData] = useState({
     name: '',
@@ -41,6 +42,7 @@ export const useForm = (
       country: ''
     })
     setSubmitDisabled(true)
+    showAlert()
     closeModal()
   };
 

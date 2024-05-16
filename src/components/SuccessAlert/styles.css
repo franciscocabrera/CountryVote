@@ -1,0 +1,33 @@
+.alert {
+  position: absolute;
+  background-color: #3FDE92;
+  width: 356;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  bottom: 50px;
+  right: 40px;
+}
+
+.check-icon {
+  height: 22px;
+  width: 22px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-left: 15px;
+  margin-right: 14px;
+  color: #15172a
+}
+
+.alet-label {
+  color: #15172a;
+  font-size: 14px;
+  margin-right: 28px;
+}
+
+.alert-button {
+  background-color: #3FDE92;
+  border: none;
+  margin-right: 15px;
+  width: 28px;
+}
