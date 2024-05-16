@@ -1,11 +1,11 @@
 import './styles.css'
 import React, { useState } from 'react'
-import Table from '../Table'
 import { MOCK_COUNTRIES } from '../../mocks'
 import searchIcon from '../../assets/search.svg'
 import { useSearchbar } from '../useSearchbar'
 import VoteModal from '../VoteModal'
 import { Country } from '../../types/country'
+import { Table } from '../Table'
 
 const CountryTable: React.FC = () => {
   const { searchQuery, filterData, handleSearchChange } = useSearchbar()

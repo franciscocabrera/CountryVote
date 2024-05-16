@@ -1,7 +1,7 @@
 .CountryTable {
-  /* background-color: #ff00008c; */
   display: flex;
   flex-direction: column;
+  margin: 50px
 }
 
 .title {

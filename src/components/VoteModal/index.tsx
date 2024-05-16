@@ -20,6 +20,17 @@ const VoteModal: React.FC<Props> = (
     handleSubmit, 
     handleInputChange 
   } = useForm(countryVotes, setVotes, isValidEmail, closeModal)
+  const sortedCountries = MOCK_COUNTRIES.sort((a, b) => {
+    const nameA = a.name.toLowerCase();
+    const nameB = b.name.toLowerCase();
+    if (nameA < nameB) {
+      return -1;
+    }
+    if (nameA > nameB) {
+      return 1; 
+    }
+    return 0;
+  });
 
   return  (
     <Modal isOpen={isModalOpen} style={modalStyle} >
@@ -66,7 +77,7 @@ const VoteModal: React.FC<Props> = (
           className='modal-input'
         >
           <option value="">Favourite Country</option>
-          {MOCK_COUNTRIES.map(country => (
+          {sortedCountries.map(country => (
             <option key={country.name} value={country.name}>
               {country.name}
             </option>

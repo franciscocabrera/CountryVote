@@ -33,3 +33,28 @@ th:last-child, td:last-child {
   padding-right: 0px;
   width: 40px
 }
+
+.navigation-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  margin-right: 10px
+}
+
+.page-button {
+  border: none;
+  background-color: #f8f8f8;
+  color: #15172a;
+  margin-left: 10px; 
+  margin-right: 10px; 
+}
+
+.page-button:hover {
+  background-color: #ffffff;
+  color: #2e2f47
+}
+
+.page-label {
+  font-size: 14px;
+  color: #15172a
+}

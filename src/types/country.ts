@@ -6,3 +6,9 @@ export type Country = {
   sub_region: string,
   votes: number
 }
+
+export type CountryTemperature = {
+  name: string
+  temp: number
+  description: string
+}

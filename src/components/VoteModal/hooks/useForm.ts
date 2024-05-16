@@ -16,14 +16,16 @@ export const useForm = (
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = event.target;
-    setFormData(prevFormData => ({
-      ...prevFormData,
+    const newFormData = {
+      ...formData,
       [name]: value
-    }));
+    }
+    setFormData(newFormData);
+    
     setSubmitDisabled(
-      formData.name === '' || 
-      formData.country === '' || 
-      !isValidEmail(formData.email)
+      newFormData.name === '' || 
+      newFormData.country === '' || 
+      !isValidEmail(newFormData.email)
     )
   };
 
@@ -38,6 +40,7 @@ export const useForm = (
       email: '',
       country: ''
     })
+    setSubmitDisabled(true)
     closeModal()
   };
 
